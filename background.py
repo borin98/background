@@ -1,3 +1,4 @@
+import argparse
 import os
 import time
 import glob
@@ -12,17 +13,16 @@ class Wallpaper:
         path_vec = glob.glob("/home/gabriel_macedo/Documents/Wallpapers/*.jpg") + glob.glob("/home/gabriel_macedo/Documents/Wallpapers/*.png")
         secure_random = random.SystemRandom()
         path_img = secure_random.choice(path_vec)
-        cmd = "gsettings set org.gnome.desktop.background picture-uri file:" + path_img
+        cmd = "gsettings set org.gnome.desktop.background picture-uri-dark file://" + path_img
         os.system(cmd)
 
 
 def main():
-    # parser = argparse.ArgumentParser()
-    # parser.add_argument('-t', '--time', help='Enter time in minutes')
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-t', '--time', help='Enter time in minutes')
 
-    # args = parser.parse_args()
-    # minutes = int(args.time)
-    minutes = (1 / 60)
+    args = parser.parse_args()
+    minutes = int(args.time)
     while True:
         Wallpaper.set_wallpaper()
         time.sleep(minutes * 60)
