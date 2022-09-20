@@ -35,7 +35,7 @@ In this case, __every file in "/home/usr/Documents/Wallpapers/" will be a wallpa
 
 - Creating a loading screen to show how much time left to change to the next wallpaper
 - Creating more warning and log to user
-- Need to change wall print to log
+- Need to change all print to log
 - Need to place a flag if the user wants cicle or not the wallpapers
 
 ## Special Thanks
